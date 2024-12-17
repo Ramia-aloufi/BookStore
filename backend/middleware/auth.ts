@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import { data } from "../config/data";
 
-export const isAdmin = (req: Request, res: Response, next: NextFunction) => {
+export const authUser = (req: Request, res: Response, next: NextFunction) => {
   try {
     const { authorization } = req.headers;
 
@@ -10,15 +10,10 @@ export const isAdmin = (req: Request, res: Response, next: NextFunction) => {
     const token = authorization.split(" ")[1];
 
     const tokenDecode = jwt.verify(token, data.jwt);
-
-    if (tokenDecode !== data.admin.email + data.admin.password)
-      throw new Error(" not authorization");
+    const { id } = tokenDecode as { id: string; iat: number };
+    req.body.userId = id;
     next();
   } catch (error) {
-    console.log((error as Error).message);
-    res.json({
-      success: false,
-      message: (error as Error).message || "An unexpected error occurred",
-    });
+    res.json({ success: false, message: (error as Error).message });
   }
 };

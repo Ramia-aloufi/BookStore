@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import { v2 as cloudinary } from "cloudinary";
-import { data } from "../config/data";
-import { Book, IBook } from "../models/book.model";
+import { Book } from "../models/book.model";
 
 export const createBook = async (req: Request, res: Response) => {
   try {
@@ -22,6 +21,7 @@ export const createBook = async (req: Request, res: Response) => {
       image: imageUrl,
       date: Date.now(),
     };
+    
 
     const book = new Book(newBook);
     await book.save();

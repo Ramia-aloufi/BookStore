@@ -69,7 +69,6 @@ try {
 
 const exist = await User.findOne({email})
 if(!exist) throw new Error('User not Exist')
-
 if(email == data.admin.email && password == data.admin.password){
     const token = jwt.sign(email + password,data.jwt)
     res.json({success:true,token})

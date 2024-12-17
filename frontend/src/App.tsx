@@ -6,10 +6,13 @@ import Cart from "./pages/Cart";
 import Contact from "./pages/Contact";
 import Login from "./pages/Login";
 import PlaceOrder from "./pages/PlaceOrder";
+import { ToastContainer } from "react-toastify";
+import Orders from "./pages/Orders";
 
 function App() {
   return (
     <main className="overflow-hidden bg-primary ">
+      <ToastContainer/>
       <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -18,6 +21,7 @@ function App() {
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/place-order" element={<PlaceOrder />}></Route>
+        <Route path="/orders" element={<Orders />}></Route>
 
       </Routes>
     </main>

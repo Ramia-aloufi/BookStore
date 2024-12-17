@@ -8,13 +8,20 @@ import { TbUserCircle } from "react-icons/tb";
 import {ShopContext} from "../context/ShopContext";
 
 const Header = () => {
-  const {navigate,setToken,token,getCartCount} = useContext(ShopContext)
+  const {navigate,setToken,token,getCartCount,setCartItems} = useContext(ShopContext)
   const [menuOpened, setMenuOpened] = useState(false);
   const [active, setActive] = useState(false);
 
   const toggleMenu = () => {
     setMenuOpened((prev) => !prev);
   };
+
+  const onLogout = ()=>{
+    localStorage.removeItem("token")
+    setToken("")
+     navigate("/login")
+     setCartItems({})
+  }
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -80,8 +87,8 @@ const Header = () => {
             </div>
             {token && (
               <ul className="bg-white p-1 w-32 ring-1 ring-slate-900/5 rounded absolute hidden group-hover:flex right-0 top-8  flex-col regular-14 shadow-md">
-                <li className="p-2 text-tertiary rounded-md hover:bg-primary">Order</li>
-                <li className="p-2 text-tertiary rounded-md hover:bg-primary">logOut</li>
+                <li onClick={()=>navigate('/orders')} className="p-2 cursor-pointer text-tertiary rounded-md hover:bg-primary">Order</li>
+                <li onClick={()=>onLogout()} className="p-2 cursor-pointer text-tertiary rounded-md hover:bg-primary">logOut</li>
               </ul>
             )}
           </div>

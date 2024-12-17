@@ -16,7 +16,8 @@ export type ShopContextType = {
     getCartCount:()=>number | undefined
     getCartAmount:() => number
     updateQuantity:(itemId: string, quantity: number) => void
-    delivery_charges:number
+    delivery_charges:number,
+    backend_url:string
   }
 
 

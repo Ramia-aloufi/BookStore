@@ -5,6 +5,8 @@ import connectDB from "./config/db"
 import userRouter from "./routes/user.routes"
 import bookRoute from "./routes/book.routes"
 import { connectCloudinary } from "./config/cloudinary"
+import cartRoute from "./routes/cart.routes"
+import orderRoute from "./routes/order.routes"
 
 // app configuration
 const app = express()
@@ -20,6 +22,8 @@ connectCloudinary( )
 // API endpoint
 app.use('/api/user',userRouter)
 app.use('/api/book',bookRoute)
+app.use("/api/cart",cartRoute)
+app.use("/api/order",orderRoute)
 
 app.get("/",(req:Request,res:Response)=>{
     res. send('API successfully connected!')
