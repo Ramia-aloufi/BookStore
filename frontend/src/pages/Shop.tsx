@@ -4,14 +4,14 @@ import { categories } from "../data";
 import Title from "../components/Title";
 import { ShopContext } from "../context/ShopContext";
 import { useContext, useEffect, useState } from "react";
-import { Book, Category } from "../types/data";
+import { Book } from "../types/data";
 import Item from "../components/Item";
 import Footer from "../components/Footer";
 
 const Shop = () => {
   const { books } = useContext(ShopContext);
 
-  const [category, setCategory] = useState<Category[]>([]);
+  const [category, setCategory] = useState<string[]>([]);
   const [sortType, setSortType] = useState("relevant");
 
   const [filterBooks, setFilterBooks] = useState<Book[]>([]);
@@ -20,8 +20,8 @@ const Shop = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemPerPage = 4;
 
-  const toggleFilter = (value:string, setState) => {
-    setState((prev) =>
+  const toggleFilter = (value: string) => {
+    setCategory((prev) =>
       prev.includes(value)
         ? prev.filter((item) => item !== value)
         : [...prev, value]
@@ -84,10 +84,10 @@ const Shop = () => {
             <div className="flexCenter cursor-pointer text-lg border-l-2 pl-2 ">
               <LuSettings2 />
             </div>
-          {/* Category filter */}
+            {/* Category filter */}
           </div>
         </div>
-          {/* Categories filter */}
+        {/* Categories filter */}
         <div className="mt-12 mb-16">
           <h3 className="h4 mb-4 hidden sm:flex">Category</h3>
           <div className="flexCenter sm:flexStart flex-wrap gap-x-12 gap-y-4">
@@ -95,7 +95,7 @@ const Shop = () => {
               <label key={category.name}>
                 <input
                   value={category.name}
-                  onChange={(e) => toggleFilter(e.target.value, setCategory)}
+                  onChange={(e) => toggleFilter(e.target.value)}
                   type="checkbox"
                   className="hidden peer"
                 />
@@ -109,7 +109,7 @@ const Shop = () => {
             ))}
           </div>
         </div>
-          {/* Books Container */}
+        {/* Books Container */}
         <div className="mt-8">
           {/* Title & Sort */}
           <div className="flexBetween !items-start gap-7 flex-wrap pb-16 max-sm:flexCenter text-center">
@@ -147,18 +147,40 @@ const Shop = () => {
         {/* Pagination */}
         <div className="flexCenter mt-14 mb-10 gap-4">
           {/* Previous button */}
-          <button disabled={currentPage ===1} onClick={()=>setCurrentPage((prev)=>prev - 1)} className={`btn-secondary !py-1 !px-3 ${currentPage === 1 && "opacity-50 cursor-not-allowed" }`}>Previous</button>
+          <button
+            disabled={currentPage === 1}
+            onClick={() => setCurrentPage((prev) => prev - 1)}
+            className={`btn-secondary !py-1 !px-3 ${
+              currentPage === 1 && "opacity-50 cursor-not-allowed"
+            }`}
+          >
+            Previous
+          </button>
           {/* Previous numbers */}
-          {Array.from({length:totalPages},(_,index)=>(
-            <button key={index + 1} onClick={()=>setCurrentPage(index + 1)} className={`btn-light !py-1 !px-3 ${currentPage === index + 1 && "!bg-secondaryOne"}`}>{index + 1}</button>
+          {Array.from({ length: totalPages }, (_, index) => (
+            <button
+              key={index + 1}
+              onClick={() => setCurrentPage(index + 1)}
+              className={`btn-light !py-1 !px-3 ${
+                currentPage === index + 1 && "!bg-secondaryOne"
+              }`}
+            >
+              {index + 1}
+            </button>
           ))}
           {/* Next Button */}
-          <button disabled={currentPage === totalPages} onClick={()=>setCurrentPage((prev)=>prev + 1)} className={`btn-secondary !py-1 !px-3 ${currentPage === totalPages && "opacity-50 cursor-not-allowed" }`}>Next</button>
-
-
+          <button
+            disabled={currentPage === totalPages}
+            onClick={() => setCurrentPage((prev) => prev + 1)}
+            className={`btn-secondary !py-1 !px-3 ${
+              currentPage === totalPages && "opacity-50 cursor-not-allowed"
+            }`}
+          >
+            Next
+          </button>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </section>
   );
 };
