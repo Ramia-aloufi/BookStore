@@ -1,4 +1,8 @@
 export const data = {
+    dev:{
+        port:process.env.PORT || "",
+        stripe_key:process.env.STRIPE_SECRET_KEY || ''
+    },
     db: process.env.MONGO_URL || '',
     cloudinary: {
         name:process.env.CLDN_NAME || '',

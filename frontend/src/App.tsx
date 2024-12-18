@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import PlaceOrder from "./pages/PlaceOrder";
 import { ToastContainer } from "react-toastify";
 import Orders from "./pages/Orders";
+import Verify from "./pages/Verify";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/place-order" element={<PlaceOrder />}></Route>
         <Route path="/orders" element={<Orders />}></Route>
+        <Route path="/verify" element={<Verify />}></Route>
 
       </Routes>
     </main>

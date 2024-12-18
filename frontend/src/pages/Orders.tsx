@@ -46,7 +46,7 @@ const Orders = () => {
 
   return (
     <section className="max-padd-container">
-        <div className="pt-24">
+        <div className="pt-24 pb-10">
             <Title title1={"Order"} titleStyle={"h3"} title2={"List"} paraStyle={""}/>
         </div>
         {orders && orders.map((order,i)=>(
