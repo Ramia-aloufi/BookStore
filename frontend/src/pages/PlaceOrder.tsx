@@ -98,7 +98,7 @@ const PlaceOrder = () => {
       <form onSubmit={onSubmitHandler} className="pt-28">
         <div className="flex flex-col xl:flex-row gap-20 xl:gap-28">
           {/* left side */}
-          <div className="flex flex-1 flex-col gap-3 text-[95%]">
+          <div className="flex flex-1 bg-white p-4 rounded flex-col gap-3 text-[95%]">
             <Title
               title1={"Delivery"}
               titleStyle={"h3"}
@@ -197,7 +197,7 @@ const PlaceOrder = () => {
           <div className="flex flex-1 flex-col">
             <CartTotal />
             {/* Payment method */}
-            <div className="my-6">
+            <div className="my-6 bg-white p-4 rounded">
               <h3 className="bold-20 mb-5">
                 Payment <span className="text-secondary">Method</span>
               </h3>

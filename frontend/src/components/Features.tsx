@@ -5,48 +5,49 @@ import { TbStarsFilled } from "react-icons/tb";
 
 const Features = () => {
   return (
-    <section className="max-padd-container py-16">
+    <section className="max-padd-container py-16 text-gray-30">
       <div className="max-padd-container grid grid-cols-2 md:grid-cols-3">
         <div className="flexCenter flex-col gap-3">
-          <BsBookmarkHeart className="h-[44px] w-[44px]" />
+          <BsBookmarkHeart className="h-[28px] w-[28px]" />
           <div className="flexCenter flex-col">
-            <h5>Advabced search filter</h5>
-            <hr className="w-8 bg-secondary h-1 rounded-full border-none" />
+          <hr className="w-8 bg-secondaryOne h-1 rounded-full border-none" />
+            <h6>Advabced search filter</h6>
           </div>
-          <p className="text-center">
+          <p className="text-center !text-gray-20">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Consequatur, officiis.
           </p>
         </div>
         <div className="flexCenter flex-col gap-3">
-          <HiOutlineAdjustmentsHorizontal className="h-[44px] w-[44px]" />
+          <HiOutlineAdjustmentsHorizontal className="h-[28px] w-[28px]" />
           <div className="flexCenter flex-col">
-            <h5>Wishlist and favorite</h5>
-            <hr className="w-8 bg-secondary h-1 rounded-full border-none" />
+          <hr className="w-8 bg-secondaryOne h-1 rounded-full border-none" />
+            <h6>Wishlist and favorite</h6>
           </div>
-          <p className="text-center">
+          <p className="text-center !text-gray-20">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Consequatur, officiis.
           </p>
         </div>
         <div className="flexCenter flex-col gap-3">
-          <TbStarsFilled className="h-[44px] w-[44px]" />
+          <TbStarsFilled className="h-[28px] w-[28px]" />
+          <hr className="w-8 bg-secondaryOne h-1 rounded-full border-none" />
           <div className="flexCenter flex-col">
-            <h5>Advabced search filter</h5>
-            <hr className="w-8 bg-secondary h-1 rounded-full border-none" />
+            <h6>Advabced search filter</h6>
           </div>
-          <p className="text-center">
+          <p className="text-center !text-gray-20">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Consequatur, officiis.
           </p>
         </div>
         <div className="flexCenter flex-col gap-3">
-          <RiSecurePaymentLine className="h-[44px] w-[44px]" />
+          <RiSecurePaymentLine className="h-[28px] w-[28px]" />
           <div className="flexCenter flex-col">
-            <h5>Wishlist and favorite</h5>
-            <hr className="w-8 bg-secondary h-1 rounded-full border-none" />
+          <hr className="w-8 bg-secondaryOne h-1 rounded-full border-none" />
+
+            <h6>Wishlist and favorite</h6>
           </div>
-          <p className="text-center">
+          <p className="text-center !text-gray-20">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Consequatur, officiis.
           </p>

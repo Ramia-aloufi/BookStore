@@ -66,8 +66,8 @@ const Header = () => {
             className="text-2xl xl:hidden cursor-pointer"
           />
           <Link className="flex relative" to={"cart"}>
-            <RiShoppingBag4Line className="text-[33px] bg-secondary text-primary p-1.5 rounded-full" />
-            <span className="bg-primary right-1 ring-slate-900/5 medium-14 absolute left-5 -top-2.5 flexCenter w-5 h-5 rounded-full shadow-md">
+            <RiShoppingBag4Line className="text-[33px] bg-tertiary text-white p-1.5 rounded-full" />
+            <span className="bg-white right-1 ring-slate-900/5 medium-14 absolute left-5 -top-2.5 flexCenter w-5 h-5 rounded-full shadow-md">
               {getCartCount()}
             </span>
           </Link>

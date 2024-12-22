@@ -53,7 +53,7 @@
 
 @layer utilities {
   .active-link {
-    @apply text-secondary relative after:w-2/3 after:h-[2px] after:rounded-full after:bg-secondary after:absolute after:-bottom-2 after:left-0;
+    @apply text-secondaryOne relative after:w-2/3 after:h-[2px] after:rounded-full after:bg-secondaryOne after:absolute after:-bottom-2 after:left-0;
   }
   .btn-white {
     @apply medium-14 bg-white text-tertiary ring-1 ring-white px-7 py-2.5 rounded-full;

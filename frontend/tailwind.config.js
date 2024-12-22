@@ -6,10 +6,10 @@ export default {
   ],  theme: {
     extend: {
       colors:{
-        primary:"#f8f6fb",
-        secondary:"#452372",
-        secondaryOne:"#ffbcb1",
-        tertiary:"#272626",
+        primary:"#fbfdef",
+        secondary:"#babf98",
+        secondaryOne:"#BCD815",
+        tertiary:"#444",
         gray:{
           10:"#eeeeee",
           20:"#a2a2a2",

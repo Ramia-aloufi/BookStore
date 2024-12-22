@@ -1,6 +1,6 @@
 import { GiMagicBroom } from "react-icons/gi";
 import { Book, Category } from "./types/data";
-import { FaChildren } from "react-icons/fa6";
+import { FaCapsules, FaChildren } from "react-icons/fa6";
 import { HiAcademicCap } from "react-icons/hi";
 import book_1 from "./assets/book/book_1.png"
 import book_2 from "./assets/book/book_2.jpeg"
@@ -17,23 +17,37 @@ import book_12 from "./assets/book/book_12.jpg"
 import book_13 from "./assets/book/book_13.jpg"
 import book_14 from "./assets/book/book_14.jpg"
 import book_15 from "./assets/book/book_15.jpg"
+import { LuSquareLibrary } from "react-icons/lu";
+import { MdBusinessCenter } from "react-icons/md";
 
 export type  Cart = {
   [bookId: string]: number;
 }
 export const categories:Category[] = [
     {
-        name:"Fantasy",
+        name:"Fiction",
         image:<GiMagicBroom className="object-cover h-10 w-10"/>
     },
     {
-        name:"Children's Books",
+        name:"Children",
         image:<FaChildren  className="object-cover h-10 w-10"/>
     },{
-        name:"Science & Technology",
+        name:"Academic",
         image:<HiAcademicCap className="object-cover h-10 w-10" />
-    }
+    },
+    {
+      name:"Health",
+      image:<FaCapsules className="object-cover h-10 w-10"/>
+  },
+  {
+      name:"Business",
+      image:<MdBusinessCenter  className="object-cover h-10 w-10"/>
+  },{
+      name:"Religious",
+      image:<LuSquareLibrary className="object-cover h-10 w-10" />
+  }
 ]
+
 
 export const books:Book[]= 
 [

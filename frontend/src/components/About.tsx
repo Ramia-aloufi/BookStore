@@ -1,56 +1,49 @@
 import { TbTruckReturn } from "react-icons/tb"
-import Title from "./Title"
-import { MdOutlinePayment } from "react-icons/md"
+import { MdOutlineLocalOffer, MdOutlinePayment } from "react-icons/md"
 import { BiSupport } from "react-icons/bi"
 
 const About = () => {
   return (
-    <section className="max-padd-container py-12 xl:py-24">
-      <div className="flexCenter flex-col gap-16 xl:gap-8 xl:flex-row">
-
-        <div className="flex-1">
-          <Title title1="Unveiling Our" title2="Stores key feature"
-          titleStyle="pb-10" paraStyle="!block"/>
-          <div className="flex flex-col items-start gap-y-4">
+    <section className="max-padd-container mb-2 bg-white p-6  text-gray-30">
+      <div className="flex flex-row flex-wrap g-2 justify-between gap-y-3">
             <div className="flexCenter gap-x-4">
-              <div className="h-16 min-w-14 bg-secondaryOne flexCenter rounded-md">
-                <TbTruckReturn className="text-2xl"/>
+              <div className="h-14 min-w-12 bg-primary flexCenter rounded-md">
+                <TbTruckReturn className="text-xl text-secondaryOne"/>
               </div>
               <div className="">
-                <h4 className="medium-18">Secure payment options</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing 
-                  elit. Quos, recusandae fuga! Quae, eius.</p>
+                <span className="bold-14 lg:bold-16">Return & Refund</span>
+                <p className="!text-[12px]">Money back guarantee</p>
               </div>
             </div>
             <div className="flexCenter gap-x-4">
-              <div className="h-16 min-w-14 bg-secondaryOne flexCenter rounded-md">
-                <MdOutlinePayment  className="text-2xl"/>
+              <div className="h-14 min-w-12 bg-primary flexCenter rounded-md">
+                <MdOutlinePayment  className="text-xl text-secondaryOne"/>
               </div>
               <div className="">
-                <h4 className="medium-18">Easy return process</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing 
-                  elit. Quos, recusandae fuga! Quae, eius.</p>
+                <span className="bold-14 lg:bold-16">Easy return process</span>
+                <p className="!text-[12px]">Money back guarantee</p>
               </div>
             </div>
             <div className="flexCenter gap-x-4">
-              <div className="h-16 min-w-14 bg-secondaryOne flexCenter rounded-md">
-                <BiSupport className="text-2xl"/>
+              <div className="h-14 min-w-12 bg-primary flexCenter rounded-md">
+                <BiSupport className="text-xl text-secondaryOne"/>
               </div>
               <div className="">
-                <h4 className="medium-18">Live customer support</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing 
-                  elit. Quos, recusandae fuga! Quae, eius.</p>
+                <span className="bold-14 lg:bold-16">Live customer support</span>
+                <p className="!text-[12px]">Always online 24/7</p>
               </div>
+              
             </div>
-
-          </div>
-          
-        </div>
-        <div className=" flex-1 flexCenter">
-          <div className=" bg-secondaryOne flexCenter p-24 max-h-[33rem] min-w-[33rem] rounded-3xl">
-            <img src="" alt=""  height={244} width={244} className="shadow-2xl stroke-slate-900/50 rounded-lg"/>
-          </div>
-        </div>
+            <div className="flexCenter gap-x-4">
+              <div className="h-14 min-w-12 bg-primary flexCenter rounded-md">
+                <MdOutlineLocalOffer className="text-xl text-secondaryOne"/>
+              </div>
+              <div className="">
+                <span className="bold-14 lg:bold-16">Daily Offers</span>
+                <p className="!text-[12px]">20% off by subscribing</p>
+              </div>
+              
+            </div>
 
       </div>
 

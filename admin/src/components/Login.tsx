@@ -2,6 +2,8 @@ import { Dispatch, FormEvent, SetStateAction, useState } from "react"
 import axios from 'axios'
 import { toast } from "react-toastify"
 import { backend_url } from "../data/data"
+import { FaBookOpen } from "react-icons/fa"
+import { Link } from "react-router-dom"
  type LoginProps = {
   setToken:Dispatch<SetStateAction<string | null>>
  }
@@ -35,8 +37,14 @@ const Login = ({setToken}:LoginProps) => {
       {/* container */}
       <div className="flex h-full w-full">
         {/* image right side */}
-        <div className="w-1/2 hidden sm:block">
-          <img alt="logo" className="object-cover h-full w-full"/>
+        <div className="w-1/2 hidden sm:flex bg-secondaryOne h-full items-center  justify-center p-4 ">
+        <div className="  ">
+        <Link className="flex items-center justify-start" to={"/"}>
+          <FaBookOpen  className="h-12 w-12 hidden sm:flex mr-2" />
+          <h4 className="bold-32">BookShop</h4>
+        </Link>
+
+        </div>
         </div>
         {/* Form side */}
         <div className="flexCenter w-full sm:w-1/2">

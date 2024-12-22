@@ -13,7 +13,7 @@ const Sidebar = ({setToken}:SidebarProps) => {
       <div className="flex flex-col gap-y-6 max-xs:items-center sm:flex-col pt-4 sm:pt-14">
         <Link className="bold-24 flex items-baseline sm:pl-12" to={"/"}>
           <FaBookOpen height={24} width={24} className="hidden sm:flex mr-2" />
-          <span className="text-secondary pl-2 sm:hidden lg:flex">
+          <span className="text-black pl-2 sm:hidden lg:flex">
             BookShop
           </span>
         </Link>

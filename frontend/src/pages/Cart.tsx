@@ -13,7 +13,7 @@ const Cart = () => {
       <div className="pt-28">
         {/* title */}
         <Title
-          title1={"Cart"}
+          title1={"Cart "}
           titleStyle={"h3"}
           title2={"List"}
           paraStyle={""}
@@ -23,7 +23,7 @@ const Cart = () => {
           {books.map((item) => {
             if (cartItems[item._id] > 0) {
               return (
-                <div key={item._id} className="bg-white p-2 mt-3 rounded-lg">
+                <div key={item._id} className="bg-white shadow-sm p-2 mt-3 rounded-lg">
                   <div className="flex gap-x-2">
                     <div className="flex items-start gap-6">
                       <img
@@ -63,12 +63,13 @@ const Cart = () => {
         </div>
         {/* Cart Summary */}
         <div className="flex mt-20">
-            <div className="w-full sm:w-[450px]">
+            <div className="!w-full sm:w-[450px] ">
                 <CartTotal/>
                 <button onClick={()=>navigate('/place-order')} className="btn-secondaryOne mt-7"> Proceed to checkout </button>
             </div>
         </div>
       </div>
+      
       <Footer/>
     </section>
   );

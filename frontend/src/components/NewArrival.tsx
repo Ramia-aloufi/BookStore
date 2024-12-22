@@ -18,7 +18,7 @@ const NewArrival = () => {
     },[books])
   return (
     <section className="max-padd-container py-16 bg-white">
-        <Title title1={'New'} title2={'Arrival'} paraStyle="!block" titleStyle=""/>
+        <Title title1={'New '} title2={'Arrival'} paraStyle="!block" titleStyle="h3"/>
     <Swiper 
     autoplay={{
             delay:3500,
@@ -45,7 +45,7 @@ const NewArrival = () => {
               }
          }}
          modules={[Pagination,Autoplay]}
-         className="h-[455px] sm:h-[488px] xl:h-[400px] mt-5"
+         className="h-[455px] sm:h-[488px] mt-5"
 
         >  
         {newArrival && newArrival.map((book)=>(

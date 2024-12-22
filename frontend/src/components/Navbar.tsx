@@ -24,7 +24,7 @@ const navItems:NavItem[] = [
         <>
         <FaRegWindowClose onClick={toggleMenu} className="text-xl self-end cursor-pointer relative left-8 "/>
         <Link to={"/"} className="bold-24 mb-10">
-        <h4 className="text-secondary">BookShop</h4></Link>
+        <h4 className="text-secondaryOne">BookShop</h4></Link>
         </>
       )}
       {navItems.map(({to,label,icon})=>(

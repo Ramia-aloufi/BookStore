@@ -16,3 +16,13 @@ export type Book = {
     date:Date
     popular:boolean
 }
+
+
+export const category = [
+   "Fiction",
+   "Children",
+   "Health",
+    "Academic",
+    "Business",
+    "Religious",
+]

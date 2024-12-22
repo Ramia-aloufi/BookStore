@@ -1,5 +1,5 @@
 import { LuSettings2 } from "react-icons/lu";
-import { RiSearch2Line } from "react-icons/ri";
+import { RiArrowDropLeftLine, RiArrowDropRightLine, RiSearch2Line } from "react-icons/ri";
 import { categories } from "../data";
 import Title from "../components/Title";
 import { ShopContext } from "../context/ShopContext";
@@ -18,7 +18,7 @@ const Shop = () => {
   const [search, setSearch] = useState("");
 
   const [currentPage, setCurrentPage] = useState(1);
-  const itemPerPage = 4;
+  const itemPerPage = 8;
 
   const toggleFilter = (value: string) => {
     setCategory((prev) =>
@@ -79,7 +79,7 @@ const Shop = () => {
               onChange={(e) => setSearch(e.target.value)}
               type="text"
               placeholder="Search here ..."
-              className="border-none outline-none w-full text-sm pl-4 bg-primary"
+              className="border-none outline-none w-full text-sm pl-4 bg-transparent "
             />
             <div className="flexCenter cursor-pointer text-lg border-l-2 pl-2 ">
               <LuSettings2 />
@@ -99,11 +99,11 @@ const Shop = () => {
                   type="checkbox"
                   className="hidden peer"
                 />
-                <div className="flexCenter flex-col gap-2 peer-checked:text-secondaryOne cursor-pointer">
-                  <div className="bg-primary h-20 w-20 flexCenter rounded-full">
+                <div className="flexCenter flex-col gap-2 peer-checked:text-secondaryOne text-gray-30 cursor-pointer">
+                  <div className="bg-primary p-1.5  h-10 w-10 flexCenter rounded-full">
                     {category.image}
                   </div>
-                  <span className="medium-14">{category.name}</span>
+                  <span className="medium-14 ">{category.name}</span>
                 </div>
               </label>
             ))}
@@ -112,10 +112,10 @@ const Shop = () => {
         {/* Books Container */}
         <div className="mt-8">
           {/* Title & Sort */}
-          <div className="flexBetween !items-start gap-7 flex-wrap pb-16 max-sm:flexCenter text-center">
+          <div className="flexBetween !items-start gap-7 flex-wrap  max-sm:flexCenter text-center">
             <Title
-              title1={"Our"}
-              titleStyle={"pb-0 text-start"}
+              title1={"Our "}
+              titleStyle={"pb-0 h3 text-start"}
               title2={"Book List"}
               paraStyle={"!block"}
             />
@@ -150,11 +150,11 @@ const Shop = () => {
           <button
             disabled={currentPage === 1}
             onClick={() => setCurrentPage((prev) => prev - 1)}
-            className={`btn-secondary !py-1 !px-3 ${
+            className={`btn-light !py-1 !px-3 ${
               currentPage === 1 && "opacity-50 cursor-not-allowed"
             }`}
           >
-            Previous
+            <RiArrowDropLeftLine />
           </button>
           {/* Previous numbers */}
           {Array.from({ length: totalPages }, (_, index) => (
@@ -162,7 +162,7 @@ const Shop = () => {
               key={index + 1}
               onClick={() => setCurrentPage(index + 1)}
               className={`btn-light !py-1 !px-3 ${
-                currentPage === index + 1 && "!bg-secondaryOne"
+                currentPage === index + 1 && "!bg-secondaryOne !text-white"
               }`}
             >
               {index + 1}
@@ -172,11 +172,11 @@ const Shop = () => {
           <button
             disabled={currentPage === totalPages}
             onClick={() => setCurrentPage((prev) => prev + 1)}
-            className={`btn-secondary !py-1 !px-3 ${
+            className={`btn-light !py-1 !px-3 ${
               currentPage === totalPages && "opacity-50 cursor-not-allowed"
             }`}
           >
-            Next
+            <RiArrowDropRightLine />
           </button>
         </div>
       </div>

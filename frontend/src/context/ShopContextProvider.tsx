@@ -62,7 +62,7 @@ const ShopContextProvider = ({ children }: ShopContextProviderProps) => {
         }
       }
     }
-    return totalAmount;
+    return  totalAmount;
   };
   const updateQuantity = async(itemId: string, quantity: number) => {
     const cartData: Cart = { ...cartItems };

@@ -1,5 +1,3 @@
-import About from "../components/About"
-import Features from "../components/Features"
 import Footer from "../components/Footer"
 import Hero from "../components/Hero"
 import NewArrival from "../components/NewArrival"
@@ -10,9 +8,8 @@ const Home = () => {
 <> 
 <Hero/>
 <NewArrival/>
-<About/>
 <PopularBook/>
-<Features/>
+{/* <Features/> */}
 <div className="max-padd-container bg-white">
   <Footer/>
 </div>

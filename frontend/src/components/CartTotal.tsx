@@ -5,7 +5,7 @@ import { ShopContext } from "../context/ShopContext"
 const CartTotal = () => {
     const {currency,getCartAmount,delivery_charges} = useContext(ShopContext)
   return (
-    <div className="w-full">
+    <div className="w-full p-3 bg-white rounded">
         {/* Title */}
         <Title title1={"Cart"} titleStyle={"h3"} title2={"Total"} paraStyle={""}/>
         <div className="flexBetween pt-3">
@@ -20,9 +20,8 @@ const CartTotal = () => {
         <hr className="mx-auto h-[1px] w-full bg-gray-900/10 my-1" />
         <div className="flexBetween pt-3">
             <h5 className="h5">Total:</h5>
-            <p  className="h5">{currency} {getCartAmount() == 0 ? "0.00":(getCartAmount() + delivery_charges)}</p>
+            <p  className="h5">{currency} {getCartAmount() == 0 ? "0.00": getCartAmount() + delivery_charges}</p>
         </div>
-        <hr className="mx-auto h-[1px] w-full bg-gray-900/10 my-1" />
     </div>
   )
 }

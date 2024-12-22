@@ -2,6 +2,8 @@ import { FormEvent, useContext, useEffect, useState } from "react";
 import { ShopContext } from "../context/ShopContext";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { FaBookOpen } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const { token, setToken, backend_url, navigate } = useContext(ShopContext);
@@ -42,16 +44,19 @@ const Login = () => {
   },[token])
 
   return (
-    <section className="absolute top-0 left-0 w-full z-50 bg-white">
+    <section className="absolute top-0 left-0 w-full z-50 bg-white  h-full ">
       {/* Container */}
       <div className="flex h-full w-full">
         {/* Image side */}
-        <div className="w-1/2 hidden sm:block">
-          <img
-            src=""
-            alt=""
-            className="object-cover aspect-square h-full w-full"
-          />
+        <div className="w-1/2 hidden sm:flex bg-secondaryOne h-full items-center  justify-center p-4 ">
+        <div className="  ">
+        <Link className="flex items-center justify-center mb-6" to={"/"}>
+          <FaBookOpen  className="h-12 w-12 hidden sm:flex mr-2" />
+          <h4 className="bold-32 ">BookShop</h4>
+        </Link>
+        <span className="regular-24">Earn exciting rewards every time you shop with us</span>
+
+        </div>
         </div>
         {/* Form side */}
         <div className=" flexCenter w-full sm:w-1/2">
@@ -61,7 +66,7 @@ const Login = () => {
           sm:max-w-md m-auto gap-y-5 to-gray-800"
           >
             <div className="w-full mb-4">
-              <h3>{currentState}</h3>
+              <h1 className="bold-24">{currentState}</h1>
             </div>
             {currentState === "Signup" && (
               <div className="w-full">
@@ -108,15 +113,15 @@ const Login = () => {
               {currentState === "Login" ? "login" : "Signup"}
             </button>
             <div className="w-full flex flex-col gap-y-3 medium-14">
-              <div className="underline">Forgot your password?</div>
+              <div className="underline cursor-pointer">Forgot your password?</div>
               {currentState === "Login" ? (
-                <div className="underline">
+                <div className=" ">
                   Don't have an account?{" "}
                   <span
                     onClick={() => {
                       setCurrentState("Signup");
                     }}
-                    className="cursor-pointer hover:text-secondaryOne"
+                    className="cursor-pointer underline hover:text-secondaryOne"
                   >
                     Create account
                   </span>
@@ -128,7 +133,7 @@ const Login = () => {
                     onClick={() => {
                       setCurrentState("Login");
                     }}
-                    className="cursor-pointer hover:text-secondaryOne"
+                    className="cursor-pointer underline hover:text-secondaryOne"
                   >
                     login
                   </span>
